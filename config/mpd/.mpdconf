@@ -1,0 +1,24 @@
+port			"16850"
+bind_to_address		"any"
+
+music_directory		"~/Music"
+playlist_directory 	"~/config/mpd/playlists"
+db_file			"~/.mpd/mpd.db"
+log_file		"~/.mpd/mpd.log"
+pid_file		"~/.mpd/pid"
+state_file		"~/.mpd/state"
+sticker_file		"~/.mpd/sticker.sql"
+
+# Music Visualization
+audio_output {
+	type	"fifo"
+	name	"fifo"
+	path	"/tmp/mpd.fifo"
+	format	"44100:16:2"
+}
+
+# Music Output
+audio_output {
+	type	"pulse"
+	name	"pulse"
+}

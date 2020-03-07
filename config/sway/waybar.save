@@ -1,0 +1,64 @@
+{
+    "layer": "top",
+    "height": 24,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["battery", "mpd", "tray", "clock"],
+    "sway/window": {
+        "max-length": 50
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+
+    "mpd": {
+	"port": 16850,
+	"max-length":50,
+	"format": "{stateIcon} {consumeIcon} {randomIcon} {repeatIcon} {singleIcon} ({elapsedTime:%M:%S}/{totalTime:%M:%S})  {title} - {artist}",
+	"format-disconnected": "Disconnected ",
+	"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon} Stopped ",
+	"unknown-tag": "N/A",
+	"interval": 2,
+	"consume-icons": {
+		"on": " "
+    	},
+	"random-icons": {
+		//"off": "<span color=\"#f53c3c\"></span> ",
+		"on": " "
+		},
+	"repeat-icons": {
+		"on": " "
+	},
+	"single-icons": {
+		"on": "1 "
+	},
+	"state-icons": {
+		"paused": "",
+		"playing": ""
+	},
+	"on-scroll-up": "mpc volume -p 16850 +3",
+	"on-scroll-down": "mpc volume -p 16850 -3",
+	"tooltip-format": "MPD (connected)\n{artist}\n{album}\n{title}",
+	"tooltip-format-disconnected": "MPD (disconnected)"
+    },
+
+    "idle_inhibitor": {
+	"format": "{icon}",
+	"format-icons": {
+		"activated": "",
+		"deactivated": ""
+		}
+    	}
+    },
+
+    "tray": {
+	// "icon-size": 21,
+	"spacing": 10
+    },
+}
+
