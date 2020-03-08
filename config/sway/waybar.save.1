@@ -1,15 +1,11 @@
 {
 "layer": "top",
-"height": 32,
-"modules-left": ["mpd", "idle_inhibitor", "sway/workspaces", "sway/mode"],
+"height": 24,
+"modules-left": ["mpd", "sway/workspaces", "sway/mode"],
 "modules-center": ["sway/window"],
-"modules-right": ["battery", "temperature", "network", "pulseaudio", "clock"],
+"modules-right": ["battery", "idle_inhibitor", "cpu", "temperature", "backlight", "pulseaudio", "clock"],
 "sway/window": {
   "max-length": 50
-},
-
-"sway/workspaces": {
-  "smooth-scrolling-threshold": 5
 },
 
 "battery": {
@@ -21,19 +17,6 @@
   "format": "{:%a, %d. %b  %H:%M:%S}",
   "format-alt": "{:%a, %d. %b  %H:%M}",
   "interval": 1
-},
-
-"network": {
-    "interface": "wlp1s0",
-    "format": "{ifname}",
-    "format-wifi": "{ipaddr}  ",
-    "format-ethernet": "{ifname} ",
-    "format-disconnected": "", //An empty format will hide the module.
-    "tooltip-format": "{ifname}",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-    "tooltip-format-ethernet": "{ifname} ",
-    "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50
 },
 
 "mpd": {
@@ -54,7 +37,7 @@
   },
 
   "repeat-icons": {
-    "on": " "
+    "on": "f363 "
   },
 
   "single-icons": {

@@ -4,3 +4,4 @@ mpd_music_dir 		= ~/Music
 ncmpcpp_directory 	= ~/.ncmpcpp
 lyrics_directory 	= ~/.mpd/lyrics
 visualizer_type 	= spectrum
+#visualizer_look		= "+#"
