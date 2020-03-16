@@ -62,8 +62,8 @@
   },
 
   "state-icons": {
-    "paused": "",
-    "playing": ""
+    "playing": "",
+    "paused": ""
   },
 
   "on-scroll-up": "mpc volume -p 16850 +3",

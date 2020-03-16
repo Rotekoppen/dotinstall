@@ -20,7 +20,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-exec wget https://source.unsplash.com/random/3200x1800 -O ~/background
+exec cp ~/background ~/currentbg && wget https://source.unsplash.com/random/3200x1800 -O ~/background
 
 output * bg ~/background fill
 output eDP-1 scale 2
@@ -37,6 +37,10 @@ output HDMI-A-1 resolution 1920x1080 position 1920,0
 ### Keyboard configuration
 input type:keyboard {
      xkb_layout no
+}
+
+input type:touchpad {
+    dwt disabled
 }
 
 default_border pixel 4
@@ -99,6 +103,7 @@ timeout 300 'exec sh /home/tobias/config/scripts/lock.sh'
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    # bindsym escape exec killall swaynag
 
     # Screenshot
     bindsym $mod+Shift+s exec "cd ~/Screenshots && grim"
@@ -229,6 +234,7 @@ mode "media" {
     bindsym d exec brightnessctl set 5%-
     bindsym b exec mpc prev -p 16850
     bindsym n exec mpc next -p 16850
+    bindsym s exec mpc -p 16850 stop
 
 
     # Return to default mode
@@ -237,6 +243,20 @@ mode "media" {
     bindsym m      mode "default"
 }
 bindsym $mod+m mode "media"
+
+bindsym XF86AudioRaiseVolume exec volumectl raise
+bindsym XF86AudioLowerVolume exec volumectl lower
+bindsym XF86AudioMute exec volumectl mute
+
+bindsym XF86MonBrightnessUp exec lightctl raise
+bindsym XF86MonBrightnessDown exec lightctl lower
+
+for_window [app_id="avizo-service"] border pixel 0
+for_window [app_id="avizo-service"] sticky toggle
+no_focus [app_id="avizo-service"]
+
+exec "avizo-service"
+exec 'mako --default-timeout 5000 --background-color "#00004590"'
 
 #
 # Status Bar:
