@@ -1,0 +1,5 @@
+for_window [app_id="avizo-service"] border pixel 0
+for_window [app_id="avizo-service"] sticky toggle
+no_focus [app_id="avizo-service"]
+
+assign [app_id="^thunderbird$"] 9

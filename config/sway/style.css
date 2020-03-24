@@ -1,42 +1,19 @@
 * {
     border: none;
     border-radius: 0;
-    /* `otf-font-awesome` is required to be installed for icons 
+    /* `otf-font-awesome` is required to be installed for icons
 	&& Fix for some icons not displaying right, if not working move the
-	   fontawesome- thing forwards or backwards in list*/ 
+	   fontawesome- thing forwards or backwards in list*/
     font-family: Roboto, Helvetica, "FontAwesome 5 Free Solid", Arial, sans-serif;
     font-size: 13px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
 }
 
 #workspaces button {
@@ -48,13 +25,13 @@ window#waybar.chromium {
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
     box-shadow: inherit;
     border-bottom: 3px solid #ffffff;
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    background-color: #111111;
     border-bottom: 3px solid #ffffff;
 }
 
@@ -64,12 +41,13 @@ window#waybar.chromium {
 
 #mode {
     background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+    border-top: 3px solid #ffffff;
 }
 
 #clock,
 #battery,
 #cpu,
+#custom-corona,
 #memory,
 #temperature,
 #backlight,
@@ -77,38 +55,64 @@ window#waybar.chromium {
 #pulseaudio,
 #custom-media,
 #tray,
+#disk,
 #mode,
 #idle_inhibitor,
 #mpd {
     padding: 0 10px;
     margin: 0 4px;
     color: #ffffff;
+    border-bottom: 3px solid #ffffff;
 }
 
-#clock {
-    background-color: #64727D;
+#clock,
+#custom-corona{
+    padding: 0 10px;
+    margin: 0 4px;
+    color: #ffffff;
+    border-bottom: 3px solid #ffffff;
+}
+
+#mpd {
+    border-color: #66cc99;
+}
+
+#mpd.disconnected {
+    border-color: #f53c3c;
+}
+
+#mpd.stopped {
+    border-color: #90b1b1;
+}
+
+#mpd.paused {
+    border-color: #A35C51;
+}
+
+#network {
+    border-color: #6689CC;
+}
+
+#network.disconnected {
+    border-color: #f53c3c;
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    border-color: #ffffff;
 }
 
 #battery.charging {
-    color: #ffffff;
-    background-color: #26A65B;
+    border-color: #26A65B;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        border-color: #ffffff;
     }
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+    border-color: #f53c3c;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -116,89 +120,39 @@ window#waybar.chromium {
     animation-direction: alternate;
 }
 
-label:focus {
-    background-color: #000000;
-}
-
-#cpu {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background-color: #9b59b6;
+#mode {
+    background-color: #f53c3c;
+    border-bottom: 0px;
 }
 
 #backlight {
-    background-color: #90b1b1;
-}
-
-#network {
-    background-color: #2980b9;
-}
-
-#network.disconnected {
-    background-color: #f53c3c;
+    border-color: #ffd759;
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+    border-color: #8AFF59;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+    border-color: #FFA059;
 }
 
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
+#disk {
+    border-color: #e559ff;
 }
 
 #temperature {
-    background-color: #f0932b;
+    border-color: #f0932b;
 }
 
 #temperature.critical {
-    background-color: #eb4d4b;
+    border-color: #eb4d4b;
 }
 
-#tray {
-    background-color: #2980b9;
+#memory {
+    border-color: #9b59b6;
 }
 
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
+#cpu {
+    border-color: #2ecc71;
 }

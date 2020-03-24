@@ -20,7 +20,7 @@ waybar:
 	ln -s ~/config/sway/rc.conf ~/.config/ranger
 
 sway:
-	sudo pacman -S sway termite grim imagemagick swaylock swayidle mako
+	sudo pacman -S sway termite grim imagemagick swaylock swayidle mako wl-clipboard slurp
 	yay -S avizo
 	mkdir -p ~/.config/termite
 	ln -s ~/config/termite/config ~/.config/termite/config
@@ -28,7 +28,7 @@ sway:
 	ln -s ~/config/sway/config ~/.config/sway/config
 
 apps:
-	sudo pacman -S firefox discord thunderbird
+	sudo pacman -S firefox discord-canary thunderbird
 
 fonts:
 	sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts
@@ -38,3 +38,11 @@ fish:
 	sudo pacman -S fish cowsay fortune-mod lolcat
 	mkdir -p ~/.config
 	ln -s ~/config/fish/config.fish ~/.config/fish
+
+mpv:
+	sudo pacman -S mpv
+
+rofi:
+	sudo pacman -S rofi
+	mkdir -p ~/.config/rofi
+	ln -s ~/config/rofi/config.rasi ~/.config/rofi

@@ -1,0 +1,14 @@
+exec 'mako --default-timeout 5000 --background-color "#00004590"'
+
+exec "waybar -c ~/config/sway/waybar-top"
+exec "waybar -c ~/config/sway/waybar-bottom"
+
+exec mpd
+
+exec monitor-sensor | bash ~/config/scripts/autorotate.sh
+
+exec mpd_discord_richpresence -h=localhost -p=16850 --fork --use-multiple-apps
+
+exec export MOZ_ENABLE_WAYLAND=1 && thunderbird
+
+exec discord-canary
