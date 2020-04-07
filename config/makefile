@@ -17,18 +17,20 @@ waybar:
 	mv ~/.config/waybar/waybar ~/.config/waybar/config
 	ln -s ~/config/sway/style.css ~/.config/waybar/
 	mkdir -p ~/.config/ranger
-	ln -s ~/config/sway/rc.conf ~/.config/ranger
+	ln -s ~/config/sway/rc.conf ~/.config/ranger/
 
 sway:
-	sudo pacman -S sway termite grim imagemagick swaylock swayidle mako wl-clipboard slurp
-	yay -S avizo
+	sudo pacman -S sway xorg-server-xwayland termite grim imagemagick swaylock swayidle mako wl-clipboard slurp wget feh brightnessctl iio-sensor-proxy
+	yay -S avizo pywal-git colorz
 	mkdir -p ~/.config/termite
 	ln -s ~/config/termite/config ~/.config/termite/config
 	mkdir -p ~/.config/sway
 	ln -s ~/config/sway/config ~/.config/sway/config
+	wget https://source.unsplash.com/random/3200x1800 -O ~/background
+	cp ~/background ~/currentbg
 
 apps:
-	sudo pacman -S firefox discord-canary thunderbird
+	sudo pacman -S firefox discord-canary thunderbird krita
 
 fonts:
 	sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts
@@ -36,8 +38,8 @@ fonts:
 
 fish:
 	sudo pacman -S fish cowsay fortune-mod lolcat
-	mkdir -p ~/.config
-	ln -s ~/config/fish/config.fish ~/.config/fish
+	mkdir -p ~/.config/fish
+	ln -s ~/config/fish/config.fish ~/.config/fish/
 
 mpv:
 	sudo pacman -S mpv
@@ -46,3 +48,18 @@ rofi:
 	sudo pacman -S rofi
 	mkdir -p ~/.config/rofi
 	ln -s ~/config/rofi/config.rasi ~/.config/rofi
+
+pulseaudio:
+	sudo pacman -S pulseaudio-alsa alsa-utils
+
+latex:
+	sudo pacman -S texlive-most texlive-lang
+	sudo pacman -S atom
+	apm install pdf-view latex language-latex
+
+bspwm:
+	sudo pacman -S bspwm
+	mkdir -p ~/.config/bspwm
+	ln -s ~/config/bspwm/bspwmrc ~/.config/bspwm/
+	mkdir -p ~/.config/sxhkd
+	ln -s ~/config/bspwm/sxhkdrc ~/.config/sxhkd/

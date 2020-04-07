@@ -7,7 +7,7 @@
   "modules-center":
     ["tray"],
   "modules-right":
-    ["memory", "cpu", "temperature", "disk", "pulseaudio", "backlight", "battery", "network"],
+    ["memory", "cpu", "temperature", "disk", "pulseaudio", "backlight", "battery", "battery#pen", "network"],
 
   "mpd": {
     "port": 16850,
@@ -107,11 +107,18 @@
 
   "battery": {
     "format": "{capacity}% {icon}",
+    "bat":"BAT0",
     "format-icons": ["", "", "", "", ""]
+  },
+  
+  "battery#pen": {
+    "format": "{capacity}% {icon}",
+    "bat":"wacom_battery_0",
+    "format-icons": [""]
   },
 
   "network": {
-      "interface": "wlp1s0",
+      "interface": "wlp115s0",
       "format": "{ifname}",
       "format-wifi": "{ipaddr}  ",
       "format-ethernet": "{ifname} ",

@@ -30,7 +30,7 @@ bindsym --release Print+Control+$mod exec sh ~/config/scripts/screenshot-window-
 
 
 # Rofi menu
-bindsym $mod+Space exec export MOZ_ENABLE_WAYLAND=1 && rofi -show run
+bindsym $mod+Space exec export QT_QPA_PLATFORM=wayland-egl && export MOZ_ENABLE_WAYLAND=1 && rofi -show run
 
 
 # Drag floating windows by holding down $mod and left mouse button.
@@ -42,7 +42,7 @@ floating_modifier $mod normal
 
 
 # Get new background
-bindsym $mod+Shift+Control+w exec cp ~/background ~/currentbg && wget https://source.unsplash.com/random/3200x1800 -O ~/background && wal -c && wal --backend colorz -i ~/currentbg
+bindsym $mod+Shift+Control+w exec sh ~/config/scripts/background.sh
 
 
 # Volume and Brightness control

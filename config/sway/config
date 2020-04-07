@@ -6,14 +6,12 @@ set $term termite
 
 
 ### Output configuration and background
-exec cp ~/background ~/currentbg && \
-wget https://source.unsplash.com/random/3200x1800 -O ~/background && \
-wal -c && \
-wal --backend colorz -i ~/currentbg
+exec sh ~/config/scripts/background.sh
 
-output * bg ~/currentbg fill
-output eDP-1 scale 2
-output HDMI-A-1 resolution 1920x1080 position 1920,0 scale 1
+output * background ~/background fill
+output eDP-1 pos 0,0 scale 2
+output DP-2 pos 0,0 scale 2
+output DP-1 resolution 1920x1080 position 1920,0 scale 1
 
 
 ### Theming

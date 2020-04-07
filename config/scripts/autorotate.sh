@@ -15,8 +15,10 @@
 
 
 SCREEN="eDP-1"
-WAYLANDINPUT=("1267:367:ELAN_Touchscreen"
-	"2:7:SynPS/2_Synaptics_TouchPad")
+WAYLANDINPUT=("1386:20991:Wacom_HID_51FF_Finger"
+	"1386:20991:Wacom_HID_51FF_Pen"
+	"1267:12563:MSFT0001:00_04F3:3113_Touchpad"
+	"1267:12563:MSFT0001:00_04F3:3113_Mouse")
 
 
 function rotate_ms {

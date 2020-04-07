@@ -7,8 +7,9 @@ exec mpd
 
 exec monitor-sensor | bash ~/config/scripts/autorotate.sh
 
-exec mpd_discord_richpresence -h=localhost -p=16850 --fork --use-multiple-apps
+#exec mpd_discord_richpresence -h=localhost -p=16850 --fork --use-multiple-apps
+exec mpd-drp
 
 exec export MOZ_ENABLE_WAYLAND=1 && thunderbird
 
-exec discord-canary
+exec discord
