@@ -1,0 +1,12 @@
+bindsym XF86AudioPlay exec mpc toggle -p 16850
+bindsym XF86AudioNext exec mpc next -p 16850
+bindsym XF86AudioPrev exec mpc prev -p 16850
+bindsym $mod+XF86AudioNext exec mpc volume -p 16850 +5
+bindsym $mod+XF86AudioPrev exec mpc volume -p 16850 -5
+
+bindsym XF86AudioRaiseVolume exec volumectl raise
+bindsym XF86AudioLowerVolume exec volumectl lower
+bindsym XF86AudioMute exec volumectl mute
+
+bindsym XF86MonBrightnessUp exec lightctl raise
+bindsym XF86MonBrightnessDown exec lightctl lower

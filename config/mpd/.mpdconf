@@ -22,3 +22,11 @@ audio_output {
 	type	"pulse"
 	name	"pulse"
 }
+
+# Music Streaming
+audio_output {
+        type            "httpd"
+	port		"16851"
+        name            "http"
+	quality		"5"
+}

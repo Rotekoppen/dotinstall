@@ -1,0 +1,1 @@
+bindsym $mod+g exec sh config/scripts/scripts.sh

@@ -52,7 +52,7 @@
       "deactivated": ""
     }
   },
-  
+
   "tray": {
       "icon-size": 21,
       "spacing": 10
@@ -110,7 +110,7 @@
     "bat":"BAT0",
     "format-icons": ["", "", "", "", ""]
   },
-  
+
   "battery#pen": {
     "format": "{capacity}% {icon}",
     "bat":"wacom_battery_0",
@@ -118,16 +118,14 @@
   },
 
   "network": {
-      "interface": "wlp115s0",
       "format": "{ifname}",
       "format-wifi": "{ipaddr}  ",
       "format-ethernet": "{ifname} ",
-      "format-disconnected": "", //An empty format will hide the module.
+      "format-disconnected": "",
       "tooltip-format": "{ifname}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
       "tooltip-format-ethernet": "{ifname} ",
       "tooltip-format-disconnected": "Disconnected",
       "max-length": 50
   }
-
 }

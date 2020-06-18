@@ -2,39 +2,27 @@
 set $mod Mod4
 
 # terminal
-set $term termite
+set $term alacritty
 
 
 ### Output configuration and background
-exec sh ~/config/scripts/background.sh
-
 output * background ~/background fill
-output eDP-1 pos 0,0 scale 2
-output DP-2 pos 0,0 scale 2
-output DP-1 resolution 1920x1080 position 1920,0 scale 1
+output eDP-1 pos 0,0    scale 2
+output  DP-2 pos 1920,0 scale 1
+output  DP-1 pos 1920,0 scale 1
 
 
 ### Theming
-include "$HOME/config/sway/theme"
+include "$HOME/config/theme/sway"
 
 ### Keyboard configuration
 include "$HOME/config/sway/input"
 
 ### Key bindings
-include "$HOME/config/sway/keybinds"
-
-### Modes
-include "$HOME/config/sway/modes"
+include "$HOME/config/sway/keybinds/main"
 
 ### Window rules
 include "$HOME/config/sway/rules"
-
-
-### Idle configuration
-exec swayidle -w \
-timeout 300 'exec sh /home/tobias/config/scripts/lock.sh'
-
-
 
 
 ### Idk, shrugs...
@@ -43,3 +31,7 @@ include /etc/sway/config.d/*
 
 ### Autostart
 include "$HOME/config/sway/autostart"
+
+
+exec swayidle -w \
+timeout 300 'exec sh ~/config/theme/lockscreen-sway.sh'

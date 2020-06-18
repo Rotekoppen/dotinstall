@@ -1,0 +1,30 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "modules-left":
+    ["sway/workspaces", "sway/mode"],
+  "modules-center":
+    ["sway/window"],
+  "modules-right":
+    ["custom/corona", "clock"],
+
+  "sway/workspaces": {
+    "smooth-scrolling-threshold": 5
+  },
+
+  "sway/window": {
+    "max-length": 100
+  },
+
+  "custom/corona": {
+  	"interval": "once",
+  	"exec": "bash ~/config/scripts/corona.sh"
+  },
+
+  "clock": {
+    "format": "{:%a, %d. %b  %H:%M:%S}",
+    "format-alt": "{:%a, %d. %b  %H:%M}",
+    "interval": 1
+  }
+}

@@ -1,65 +1,52 @@
-mpd:
-	sudo pacman -S mpd ncmpcpp mpc
-	ln -s ~/config/mpd/.mpdconf ~/.mpdconf
-	mkdir -p ~/.mpd
-	mkdir -p ~/.ncmpcpp
-	ln -s ~/config/mpd/.ncmpcpp ~/.ncmpcpp/config
-	yay -S mpdris2
+yay:
+	cd /tmp
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si
+
+latex:
+	yay -S texlive-most texlive-lang atom hunspell-nn hunspell-nb hunspell-en_GB hunspell-es_es
+	apm install pdf-view latex language-latex
 
 youtube-dl:
 	sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 	sudo chmod a+rx /usr/local/bin/youtube-dl
 
-waybar:
-	sudo pacman -S waybar otf-font-awesome pavucontrol
-	mkdir -p ~/.config/waybar
-	ln -s ~/config/sway/waybar ~/.config/waybar/
-	mv ~/.config/waybar/waybar ~/.config/waybar/config
-	ln -s ~/config/sway/style.css ~/.config/waybar/
-	mkdir -p ~/.config/ranger
-	ln -s ~/config/sway/rc.conf ~/.config/ranger/
+mpd:
+	yay -S mpd ncmpcpp mpc mpdris2 mpd_discord_richpresence
+	mkdir -p ~/.ncmpcpp
+	ln -s ~/config/mpd/.mpdconf ~/.mpdconf
+	ln -s ~/config/mpd/.ncmpcpp ~/.ncmpcpp/config
 
-sway:
-	sudo pacman -S sway xorg-server-xwayland termite grim imagemagick swaylock swayidle mako wl-clipboard slurp wget feh brightnessctl iio-sensor-proxy
-	yay -S avizo pywal-git colorz
-	mkdir -p ~/.config/termite
-	ln -s ~/config/termite/config ~/.config/termite/config
-	mkdir -p ~/.config/sway
-	ln -s ~/config/sway/config ~/.config/sway/config
-	wget https://source.unsplash.com/random/3200x1800 -O ~/background
-	cp ~/background ~/currentbg
+mopidy:
+	yay -S mopidy mopidy-mpd mopidy-iris
+	ln -s ~/config/mopidy/ ~/.config/mopidy
 
-apps:
-	sudo pacman -S firefox discord-canary thunderbird krita
-
-fonts:
-	sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts
-	yay -S ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-inconsolata ttf-ubuntu-font-family
+music:
+	rm ~/Music -r
+	ln -sF /synced/Music ~/Music
 
 fish:
-	sudo pacman -S fish cowsay fortune-mod lolcat
+	sudo pacman -S fish
 	mkdir -p ~/.config/fish
 	ln -s ~/config/fish/config.fish ~/.config/fish/
 
-mpv:
-	sudo pacman -S mpv
+sway:
+	yay -S sway xorg-server-xwayland brightnessctl iio-sensor-proxy swayidle wl-clipboard slurp grim alacritty
+	mkdir -p ~/.config/sway
+	ln -s ~/config/sway/config ~/.config/sway/config
+
+waybar:
+	sudo pacman -S waybar otf-font-awesome pavucontrol
+	mkdir -p ~/.config/waybar
+	ln -s ~/config/theme/waybar.css ~/.config/waybar/style.css
 
 rofi:
 	sudo pacman -S rofi
 	mkdir -p ~/.config/rofi
 	ln -s ~/config/rofi/config.rasi ~/.config/rofi
 
-pulseaudio:
-	sudo pacman -S pulseaudio-alsa alsa-utils
-
-latex:
-	sudo pacman -S texlive-most texlive-lang
-	sudo pacman -S atom
-	apm install pdf-view latex language-latex
-
-bspwm:
-	sudo pacman -S bspwm
-	mkdir -p ~/.config/bspwm
-	ln -s ~/config/bspwm/bspwmrc ~/.config/bspwm/
-	mkdir -p ~/.config/sxhkd
-	ln -s ~/config/bspwm/sxhkdrc ~/.config/sxhkd/
+theme-darth:
+	yay -S swaylock-effects-git mako pwgen
+	rm ~/config/theme -r
+	cp ~/config/themes/darth ~/config/theme -r

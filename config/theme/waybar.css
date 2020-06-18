@@ -1,3 +1,5 @@
+@import url('file:///home/tobias/.cache/wal/colors-waybar.css');
+
 * {
     border: none;
     border-radius: 0;
@@ -10,7 +12,7 @@
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0,0,0,0.75);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -21,6 +23,7 @@ window#waybar {
     background-color: transparent;
     color: #ffffff;
     border-bottom: 3px solid transparent;
+    min-width: 16px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -62,7 +65,8 @@ window#waybar {
     padding: 0 10px;
     margin: 0 4px;
     color: #ffffff;
-    border-bottom: 3px solid #ffffff;
+    border-bottom: 4px solid #ffffff;
+    opacity: 1;
 }
 
 #clock,
@@ -70,7 +74,7 @@ window#waybar {
     padding: 0 10px;
     margin: 0 4px;
     color: #ffffff;
-    border-bottom: 3px solid #ffffff;
+    border-bottom: 4px solid #ffffff;
 }
 
 #mpd {
@@ -123,6 +127,7 @@ window#waybar {
 #mode {
     background-color: #f53c3c;
     border-bottom: 0px;
+    border-top: 0px;
 }
 
 #backlight {

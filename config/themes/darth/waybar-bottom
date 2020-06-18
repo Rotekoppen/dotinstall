@@ -1,0 +1,131 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 32,
+  "modules-left":
+    ["mpd", "idle_inhibitor"],
+  "modules-center":
+    ["tray"],
+  "modules-right":
+    ["memory", "cpu", "temperature", "disk", "pulseaudio", "backlight", "battery", "battery#pen", "network"],
+
+  "mpd": {
+    "port": 16850,
+    "max-length":60,
+    "format": "{stateIcon} {consumeIcon} {randomIcon} {repeatIcon} {singleIcon} ({elapsedTime:%M:%S}/{totalTime:%M:%S})  {title} - {artist}",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon} Stopped ",
+    "unknown-tag": "N/A",
+    "interval": 2,
+    "consume-icons": {
+      "on": " "
+    },
+
+    "random-icons": {
+      "//off": "<span color=\"#f53c3c\"></span> ",
+      "on": " "
+    },
+
+    "repeat-icons": {
+      "on": " "
+    },
+
+    "single-icons": {
+      "on": "1 "
+    },
+
+    "state-icons": {
+      "playing": "",
+      "paused": ""
+    },
+
+    "on-scroll-up": "mpc volume -p 16850 +3",
+    "on-scroll-down": "mpc volume -p 16850 -3",
+    "tooltip-format": "MPD (connected)\n{artist}\n{album}\n{title}",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+
+  "tray": {
+      "icon-size": 21,
+      "spacing": 10
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": "{}% ",
+    "max-length": 10
+  },
+
+  "cpu": {
+    "interval": 10,
+    "format": "{}% "
+  },
+
+  "temperature": {
+    "thermal_zone": "cooling_device0",
+    "format": "{temperatureC}°C "
+  },
+
+  "disk": {
+    "interval": 60,
+    "format": "{free} ({percentage_free}%)",
+    "path": "/"
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": ["", ""],
+    "on-scroll-up": "brightnessctl set +1%",
+    "on-scroll-down": "brightnessctl set 1%-"
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+  },
+
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "bat":"BAT0",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "battery#pen": {
+    "format": "{capacity}% {icon}",
+    "bat":"wacom_battery_0",
+    "format-icons": [""]
+  },
+
+  "network": {
+      "format": "{ifname}",
+      "format-wifi": "{ipaddr}  ",
+      "format-ethernet": "{ifname} ",
+      "format-disconnected": "",
+      "tooltip-format": "{ifname}",
+      "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+      "tooltip-format-ethernet": "{ifname} ",
+      "tooltip-format-disconnected": "Disconnected",
+      "max-length": 50
+  }
+}

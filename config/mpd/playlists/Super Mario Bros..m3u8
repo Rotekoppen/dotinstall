@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,01-overworld.mp3
+file:///synced/Music/SuperMarioBros.Revisited/01-overworld.mp3
+#EXTINF:-1,02-underground.mp3
+file:///synced/Music/SuperMarioBros.Revisited/02-underground.mp3
+#EXTINF:-1,03-underwater.mp3
+file:///synced/Music/SuperMarioBros.Revisited/03-underwater.mp3
+#EXTINF:-1,04-castle.mp3
+file:///synced/Music/SuperMarioBros.Revisited/04-castle.mp3
+#EXTINF:-1,05-levelcomplete.mp3
+file:///synced/Music/SuperMarioBros.Revisited/05-levelcomplete.mp3
+#EXTINF:-1,06-gameover.mp3
+file:///synced/Music/SuperMarioBros.Revisited/06-gameover.mp3

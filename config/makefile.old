@@ -1,0 +1,72 @@
+yay:
+	cd /tmp
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si
+
+mpd:
+	sudo pacman -S mpd ncmpcpp mpc
+	ln -s ~/config/mpd/.mpdconf ~/.mpdconf
+	mkdir -p ~/.mpd
+	mkdir -p ~/.ncmpcpp
+	ln -s ~/config/mpd/.ncmpcpp ~/.ncmpcpp/config
+	yay -S mpdris2
+
+youtube-dl:
+	sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+	sudo chmod a+rx /usr/local/bin/youtube-dl
+
+waybar:
+	sudo pacman -S waybar otf-font-awesome pavucontrol
+	mkdir -p ~/.config/waybar
+	ln -s ~/config/sway/waybar ~/.config/waybar/
+	mv ~/.config/waybar/waybar ~/.config/waybar/config
+	ln -s ~/config/sway/style.css ~/.config/waybar/
+	mkdir -p ~/.config/ranger
+	ln -s ~/config/sway/rc.conf ~/.config/ranger/
+
+sway:
+	sudo pacman -S sway xorg-server-xwayland termite grim imagemagick swaylock swayidle mako wl-clipboard slurp feh brightnessctl iio-sensor-proxy
+	yay -S avizo pywal-git colorz
+	mkdir -p ~/.config/termite
+	ln -s ~/config/termite/config ~/.config/termite/config
+	mkdir -p ~/.config/sway
+	ln -s ~/config/sway/config ~/.config/sway/config
+	wget https://source.unsplash.com/random/3200x1800 -O ~/background
+	cp ~/background ~/currentbg
+
+apps:
+	sudo pacman -S firefox discord-canary thunderbird krita
+
+fonts:
+	sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts
+	yay -S ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-inconsolata ttf-ubuntu-font-family
+
+fish:
+	sudo pacman -S fish cowsay fortune-mod lolcat
+	mkdir -p ~/.config/fish
+	ln -s ~/config/fish/config.fish ~/.config/fish/
+
+mpv:
+	sudo pacman -S mpv
+
+rofi:
+	sudo pacman -S rofi
+	mkdir -p ~/.config/rofi
+	ln -s ~/config/rofi/config.rasi ~/.config/rofi
+
+pulseaudio:
+	sudo pacman -S pulseaudio-alsa alsa-utils
+
+latex:
+	sudo pacman -S texlive-most texlive-lang
+	sudo pacman -S atom
+	apm install pdf-view latex language-latex
+	yay -S hunspell-nn hunspell-nb hunspell-en_GB hunspell-es_es
+
+bspwm:
+	sudo pacman -S bspwm sxhkd
+	mkdir -p ~/.config/bspwm
+	ln -s ~/config/bspwm/bspwmrc ~/.config/bspwm/
+	mkdir -p ~/.config/sxhkd
+	ln -s ~/config/bspwm/sxhkdrc ~/.config/sxhkd/

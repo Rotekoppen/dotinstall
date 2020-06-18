@@ -1,0 +1,13 @@
+bindsym $mod+Shift+c reload
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+q kill
+
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+Control+l exec sh ~/config/theme/lockscreen-sway.sh
+
+floating_modifier $mod normal
+
+include "$HOME/config/sway/keybinds/media"
+include "$HOME/config/sway/keybinds/screenshot"
+include "$HOME/config/sway/keybinds/workspaces"
+include "$HOME/config/sway/keybinds/apps"

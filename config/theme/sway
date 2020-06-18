@@ -1,0 +1,23 @@
+include "$HOME/.cache/wal/colors-sway"
+
+exec 'mako --default-timeout 5000 --background-color "#00004590"'
+
+exec sh ~/config/scripts/scripts/background.sh
+
+exec "waybar -c ~/config/theme/waybar-top"
+exec "waybar -c ~/config/theme/waybar-bottom"
+
+client.focused          $color3 $background $foreground $color3 $color4
+client.focused_inactive #000000 $background $foreground #000000 #000000
+client.unfocused        #000000 $background $foreground #000000 #000000
+client.urgent           $color7 $background $foreground #2f343f $color5
+client.placeholder      #2f343f $background $foreground #2f343f $color5
+client.background       #2f343f
+
+default_border pixel 4
+default_floating_border pixel 4
+
+gaps outer 0
+gaps inner 0
+
+bindsym $mod+a exec rofi -show run
