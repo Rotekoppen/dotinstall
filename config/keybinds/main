@@ -1,0 +1,5 @@
+bindsym $mod+Shift+c reload
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+r restart
+

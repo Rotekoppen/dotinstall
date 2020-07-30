@@ -1,0 +1,19 @@
+//META{
+  "name":"Dracula",
+  "description":"Discord but with Dracula's favorite colors :3",
+  "author":"0x71, DevilBro",
+  "version":"0.1"}*//
+
+@import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/BasicBackground/BasicBackground.css);
+
+:root {
+    --accentcolor: #bd93f9; 		/* default: 190,78,180 discord: 114,137,218 bd-blue: 58,113,193*/
+    --backdrop: #282a36;	/* default: rgba(0,0,0,0.4) can also be changed to an image like --background */
+
+
+    /* DO NOT TOUCH ANYTHING BELOW THIS */
+    --version1_0_5:					none;
+    --backgroundsize: 				cover;
+    --popoutsize: 					cover;
+    --backdropsize: 				cover;
+}

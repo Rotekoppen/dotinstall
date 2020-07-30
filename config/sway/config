@@ -16,14 +16,23 @@ output  DP-1 pos 1920,0 scale 1
 include "$HOME/config/theme/sway"
 
 ### Keyboard configuration
-include "$HOME/config/sway/input"
+include "$HOME/config/input"
 
 ### Key bindings
-include "$HOME/config/sway/keybinds/main"
+include "$HOME/config/keybinds/main"
+include "$HOME/config/keybinds/media"
+include "$HOME/config/keybinds/workspaces"
+include "$HOME/config/keybinds/apps"
+
 
 ### Window rules
-include "$HOME/config/sway/rules"
+include "$HOME/config/rules"
 
+## Sway spesific
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+Control+l exec sh ~/config/theme/lockscreen-sway.sh
+include "$HOME/config/keybinds/screenshot"
+floating_modifier $mod normal
 
 ### Idk, shrugs...
 include /etc/sway/config.d/*

@@ -1,0 +1,14 @@
+# mod key
+set $mod Mod4
+
+# terminal
+set $term alacritty
+
+# font
+font pango:DejaVu Sans Mono 8
+
+### Key bindings
+include "$HOME/config/keybinds/main"
+
+### Window rules
+include "$HOME/config/rules"

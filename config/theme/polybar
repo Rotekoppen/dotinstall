@@ -1,0 +1,187 @@
+[color]
+fg = #f8f8f2
+bg = #282a36
+
+cl = #44475a
+sel = #44475a
+
+com = #6272a4
+
+cya = #8be9fd
+gre = #50fa7b
+ora = #ffb86c
+pin = #ff79c6
+pur = #bd93f9
+red = #ff5555
+yel = #f1fa8c
+
+[base]
+height = 96
+border-left-size = 60
+border-right-size = 60
+
+background = ${color.bg}
+foreground =${color.fg}
+
+font-0 = "NotoSans-Regular:                                                     size=24;6"
+font-1 = "Font Awesome 5 Free,Font Awesome 5 Free Solid:        style=Solid:    size=32;6"
+font-2 = "Font Awesome 5 Brands,Font Awesome 5 Brands Regular:  style=Regular:  size=48;12"
+
+[bar/1]
+inherit = base
+border-bottom-size  = 60
+bottom = true
+
+modules-left = corona
+modules-right = filesystem ram cpu temp backlight pulseaudio battery date
+module-margin = 4
+
+[bar/2]
+inherit = base
+border-top-size = 60
+
+modules-left = i3 title
+modules-right = mpdnp mpd
+module-margin = 2
+
+tray-position = right
+tray-maxsize = 64
+[module/title]
+type = internal/xwindow
+
+[module/corona]
+type = custom/script
+exec = ~/config/scripts/corona.sh
+spacing = 4
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 16850
+interval = 3
+format-online = <toggle> <icon-prev> <icon-next>
+format-online-spacing = 4
+format-online-background = ${color.pur}
+format-online-foreground = ${color.bg}
+format-online-padding = 4
+icon-play = 
+icon-pause = 
+icon-prev = 
+icon-next = 
+
+[module/mpdnp]
+type = internal/mpd
+host = 127.0.0.1
+port = 16850
+interval = 3
+format-online = <label-song>
+
+[module/ram]
+type = internal/memory
+interval = 5
+format = <label> 
+format-foreground = ${color.cya}
+
+[module/filesystem]
+type = internal/fs
+mount-0 = /
+mount-1 = /synced
+mount-2 = /windows
+spacing = 4
+
+[module/cpu]
+type = internal/cpu
+format = <label> 
+format-foreground = ${color.gre}
+interval = 5
+
+[module/temp]
+type = internal/temperature
+base-temperature = 20
+warn-temperature = 60
+format = <label> <ramp>
+format-foreground = ${color.ora}
+format-warn = <label-warn> 
+format-warn-background = ${color.red}
+format-warn-foreground = ${color.bg}
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+format-warn-padding = 4
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+enable-scroll = true
+
+label = %percentage%%
+format = <label> 
+format-foreground = ${color.yel}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <label-volume> <ramp-volume>
+format-volume-foreground = ${color.pin}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[module/battery]
+type = internal/battery
+full-at = 98
+battery = BAT0
+adapter = ADP1
+format-charging-foreground = ${color.pur}
+format-discharging-foreground = ${color.pur}
+format-full-foreground = ${color.pur}
+
+format-charging = <label-charging> <animation-charging>
+format-discharging = <label-discharging> <ramp-capacity>
+format-full = <label-full> <ramp-capacity>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+[module/i3]
+type = internal/i3
+
+label-mode = %mode%
+label-mode-padding = 4
+label-mode-background = ${color.red}
+label-mode-foreground = ${color.bg}
+
+label-focused = %index%
+label-focused-foreground = ${color.bg}
+label-focused-background = ${color.ora}
+label-focused-padding = 4
+
+label-unfocused = %index%
+label-unfocused-padding = 4
+
+label-visible = %index%
+label-visible-padding = 4
+
+label-urgent = %index%
+label-urgent-foreground = ${color.bg}
+label-urgent-background = ${color.red}
+label-urgent-padding = 4
+
+[module/date]
+type = internal/date
+time = %H:%M:%S
+date = %Y-%m-%d%
+label = %date% %time%
+label-background=${color.cya}
+label-foreground=${color.bg}
+label-padding = 8

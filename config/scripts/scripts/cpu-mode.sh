@@ -1,5 +1,5 @@
 #!/bin/bash
-kdesu -c "cpupower frequency-set $(
+cpupower frequency-set $(
 echo "-u 800MHz
 -u 1GHz
 -u 1.5GHz
@@ -9,4 +9,4 @@ echo "-u 800MHz
 -g performance
 -g conservative
 -g ondemand" |
-rofi -dmenu -i -p "Select CPU mode")"
+rofi -dmenu -i -p "Select CPU mode")

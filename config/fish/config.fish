@@ -1,1 +1,1 @@
-cat ~/.cache/wal/sequences &
+fortune | cowsay

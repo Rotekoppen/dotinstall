@@ -1,6 +1,69 @@
+# mod key
+set $mod Mod4
+
+# terminal
+set $term alacritty
+
+# font
+font pango:DejaVu Sans Mono 8
+
+for_window [title="Firefox - Sharing Indicator"] floating enable
+for_window [title="Picture-in-Picture"] floating enable
+for_window [title="Extension: (Tree Style Tab) - Close tabs? - Mozilla Firefox"] floating enable
+
+floating_modifier $mod
+
+exec xrdb ~/.Xresources
+exec picom -f -I 0.1 -O 0.1 --blur-method dual_kawase --blur-background-exclude 'n:ai:polybar'
+exec polybar -r -c ~/config/theme/polybar 1
+exec polybar -r -c ~/config/theme/polybar 2
+exec feh --bg-fill ~/background
+exec mpd
+
+# Fix audio issues, problably want to delete this ;)
+exec amixer -D hw:0 sset Master unmute && amixer -D hw:0 sset Master playback 75%
+
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
+
+bindsym $mod+control+space exec rofi -show run
+
+for_window [class=".*"] border pixel 4
+
+gaps inner 30
+bindsym $mod+Shift+c reload
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+r restart
+
+bindsym XF86AudioPlay exec mpc toggle -p 16850
+bindsym XF86AudioNext exec mpc next -p 16850
+bindsym XF86AudioPrev exec mpc prev -p 16850
+bindsym $mod+XF86AudioNext exec mpc volume -p 16850 +5
+bindsym $mod+XF86AudioPrev exec mpc volume -p 16850 -5
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
+
+# Container layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
 # Floating
 bindsym $mod+space focus mode_toggle

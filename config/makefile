@@ -1,8 +1,8 @@
 yay:
-	cd /tmp
+	sudo pacman -S fakeroot binutils gcc pkgconf
 	git clone https://aur.archlinux.org/yay.git
-	cd yay
-	makepkg -si
+	cd ./yay/; makepkg -si yay/PKGBUILD
+	rm yay -rf
 
 latex:
 	yay -S texlive-most texlive-lang atom hunspell-nn hunspell-nb hunspell-en_GB hunspell-es_es
@@ -13,10 +13,11 @@ youtube-dl:
 	sudo chmod a+rx /usr/local/bin/youtube-dl
 
 mpd:
-	yay -S mpd ncmpcpp mpc mpdris2 mpd_discord_richpresence
+	yay -S mpd ncmpcpp mpc
 	mkdir -p ~/.ncmpcpp
 	ln -s ~/config/mpd/.mpdconf ~/.mpdconf
 	ln -s ~/config/mpd/.ncmpcpp ~/.ncmpcpp/config
+	mkdir -p ~/.mpd
 
 mopidy:
 	yay -S mopidy mopidy-mpd mopidy-iris
@@ -27,7 +28,7 @@ music:
 	ln -sF /synced/Music ~/Music
 
 fish:
-	sudo pacman -S fish
+	sudo pacman -S fish fortune-mod cowsay
 	mkdir -p ~/.config/fish
 	ln -s ~/config/fish/config.fish ~/.config/fish/
 
@@ -37,9 +38,23 @@ sway:
 	ln -s ~/config/sway/config ~/.config/sway/config
 
 waybar:
-	sudo pacman -S waybar otf-font-awesome pavucontrol
+	sudo pacman -S waybar otf-font-awesome pavucontrol brightnessctl
 	mkdir -p ~/.config/waybar
 	ln -s ~/config/theme/waybar.css ~/.config/waybar/style.css
+
+i3:
+	yay -S i3-gaps alacritty xorg-server xorg-server-common xorg-xinit picom-ibhagwan-git brightnessctl polybar otf-font-awesome ttf-font-awesome
+	mkdir -p ~/.config/i3
+	ln -s ~/config/i3/config.out ~/.config/i3/config
+
+awesome:
+	yay -s awesome
+	ln -s ~/config/awesome ~/.config/awesome
+
+alacritty:
+	sudo pacman -S alacritty
+	mkdir -p ~/.config/alacritty
+	ln -s ~/config/theme/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 rofi:
 	sudo pacman -S rofi
@@ -50,3 +65,22 @@ theme-darth:
 	yay -S swaylock-effects-git mako pwgen
 	rm ~/config/theme -r
 	cp ~/config/themes/darth ~/config/theme -r
+
+theme-lamp:
+	# The color-schemes name is Dracula: https://draculatheme.com (did I do it right?)
+	#yay -S
+	rm ~/config/theme -r
+	cp ~/config/themes/lamp ~/config/theme -r
+	cd i3; make
+
+theme-fantastic:
+	rm ~/config/theme -r
+	cp ~/config/themes/fantastic ~/config/theme -r
+
+discord:
+	yay -S discord betterdiscordctl
+	betterdiscordctl install
+	ln -s ~/config/theme/discord.css ~/.config/BetterDiscord/themes/dotinstall.theme.css	
+
+fonts:
+	sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-extra noto-fonts-cjk

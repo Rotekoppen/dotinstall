@@ -1,0 +1,14 @@
+bindsym XF86AudioPlay exec mpc toggle -p 16850
+bindsym XF86AudioNext exec mpc next -p 16850
+bindsym XF86AudioPrev exec mpc prev -p 16850
+bindsym $mod+XF86AudioNext exec mpc volume -p 16850 +5
+bindsym $mod+XF86AudioPrev exec mpc volume -p 16850 -5
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
