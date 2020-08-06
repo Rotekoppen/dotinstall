@@ -73,14 +73,26 @@ theme-lamp:
 	cp ~/config/themes/lamp ~/config/theme -r
 	cd i3; make
 
-theme-fantastic:
+theme-dawn:
+	# The color-schemes name is Dracula: https://draculatheme.com (did I do it right?)
+	yay -S i3-gaps picom-rounded-corners
 	rm ~/config/theme -r
-	cp ~/config/themes/fantastic ~/config/theme -r
+	cp ~/config/themes/dawn ~/config/theme -r
+	cd i3; make
+
+theme-dawn-refresh:
+	rm ~/config/theme -r
+	cp ~/config/themes/dawn ~/config/theme -r
+	cd i3; make
+
+picom:
+	mkdir -p ~/.config/picom
+	ln -s ~/config/theme/picom.conf ~/.config/picom/picom.conf
 
 discord:
 	yay -S discord betterdiscordctl
 	betterdiscordctl install
-	ln -s ~/config/theme/discord.css ~/.config/BetterDiscord/themes/dotinstall.theme.css	
+	ln -s ~/config/theme/discord.css ~/.config/BetterDiscord/themes/dotinstall.theme.css
 
 fonts:
 	sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-extra noto-fonts-cjk

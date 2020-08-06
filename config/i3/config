@@ -14,12 +14,9 @@ for_window [title="Extension: (Tree Style Tab) - Close tabs? - Mozilla Firefox"]
 floating_modifier $mod
 
 exec xrdb ~/.Xresources
-exec picom -f -I 0.1 -O 0.1 --blur-method dual_kawase --blur-background-exclude 'n:ai:polybar'
-exec polybar -r -c ~/config/theme/polybar 1
-exec polybar -r -c ~/config/theme/polybar 2
+
 exec feh --bg-fill ~/background
 exec mpd
 
 # Fix audio issues, problably want to delete this ;)
-exec amixer -D hw:0 sset Master unmute && amixer -D hw:0 sset Master playback 75%
-
+exec amixer -D hw:0 sset Master unmute && amixer -D hw:0 sset Master playback 100%

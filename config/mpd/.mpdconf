@@ -12,7 +12,7 @@ sticker_file		"~/.mpd/sticker.sql"
 # Music Visualization
 audio_output {
 	type	"fifo"
-	name	"fifo"
+	name	"Visualization"
 	path	"/tmp/mpd.fifo"
 	format	"44100:16:2"
 }
@@ -20,13 +20,13 @@ audio_output {
 # Music Output
 audio_output {
 	type	"pulse"
-	name	"pulse"
+	name	"PC-speakers"
 }
 
 # Music Streaming
 audio_output {
         type            "httpd"
 	port		"16851"
-        name            "http"
+        name            "Web"
 	quality		"5"
 }

@@ -1,3 +1,21 @@
+font:
+  normal:
+    family: Terminus
+    style: Regular
+
+  bold:
+    family: Terminus
+    style: Bold
+
+  italic:
+    family: monospace
+    style: Italic
+
+  bold_italic:
+    family: monospace
+    style: Bold Italic
+  size: 14
+
 # ...
 background_opacity: 0.7
 # Colors (Dracula)

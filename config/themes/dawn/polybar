@@ -17,8 +17,9 @@ yel = #f1fa8c
 
 [base]
 height = 96
-border-left-size = 60
-border-right-size = 60
+border-left-size = 30
+border-right-size = 30
+radius = 16.0
 
 background = ${color.bg}
 foreground =${color.fg}
@@ -29,7 +30,7 @@ font-2 = "Font Awesome 5 Brands,Font Awesome 5 Brands Regular:  style=Regular:  
 
 [bar/1]
 inherit = base
-border-bottom-size  = 60
+border-bottom-size  = 30
 bottom = true
 
 modules-left = corona
@@ -38,15 +39,11 @@ module-margin = 4
 
 [bar/2]
 inherit = base
-border-top-size = 60
+border-top-size = 30
 
-modules-left = i3
-modules-center = title
+modules-left = i3 title
 modules-right = mpdnp mpd
 module-margin = 2
-
-tray-position = right
-tray-maxsize = 64
 
 [module/title]
 type = internal/xwindow
