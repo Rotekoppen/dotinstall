@@ -1,0 +1,180 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #282a36;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #f8f8f2;
+}
+
+#workspaces.dp button {
+  padding: 0px 10px;
+  margin: 0px;
+}
+
+#workspaces.dp label {
+  font-size:26;
+}
+
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    background-color: #6272a4;
+    box-shadow: inherit;
+}
+
+#workspaces button.focused {
+    background-color: #44475a;
+}
+
+#workspaces button.urgent {
+    background-color: #ff5555;
+}
+
+#mode {
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#disk,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd {
+    padding: 0 10px;
+    margin: 0 4px;
+    color: #f8f8f2;
+    background-color: #44475a;
+}
+
+#window {
+  color: #f8f8f2;
+  margin-left: 10px;
+}
+
+#mode {
+  background-color: #ff5555;
+}
+#custom-touch {
+  min-height: 60px;
+  color: #f8f8f2;
+  font-size: 32;
+  margin: 8px 0px;
+  background-color: #44475a;
+}
+
+#clock {
+}
+
+#clock.dp {
+  font-size:26;
+  padding: 0px 20px;
+  margin: 0px;
+}
+
+#battery {
+}
+
+#battery.charging {
+    color: #50fa7b;
+}
+
+@keyframes blink {
+    to {
+        background-color: #44475a;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #ff5555;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#backlight {
+}
+
+#network {
+}
+
+#network.disconnected {
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+
+#temperature {
+}
+
+#temperature.critical {
+    background-color: #ff5555;
+}
+
+#tray {
+}
+
+#idle_inhibitor {
+}
+
+#idle_inhibitor.activated {
+    background-color: #6272a4;
+}
+
+#mpd {
+}
+
+#mpd.disconnected {
+}
+
+#mpd.stopped {
+}
+
+#mpd.paused {
+}

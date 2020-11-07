@@ -1,0 +1,7 @@
+bindsym $mod+Shift+c reload
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+floating_modifier $mod normal
+bindsym Print exec sway-interactive-screenshot

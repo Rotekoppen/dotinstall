@@ -1,0 +1,29 @@
+# mod key
+set $mod Mod4
+
+# terminal
+set $term alacritty
+
+### Output configuration and background
+include "$HOME/cleanconfig/shared/sway/output"
+
+### Theming
+include "$HOME/cleanconfig/current/sway"
+
+### Keyboard configuration
+include "$HOME/cleanconfig/shared/sway/keyboard"
+
+### Key bindings
+include "$HOME/cleanconfig/shared/sway/keybinds/common"
+include "$HOME/cleanconfig/shared/sway/keybinds/media"
+include "$HOME/cleanconfig/shared/sway/keybinds/workspaces"
+#include "$HOME/config/keybinds/screenshot"
+
+### Window rules
+include "$HOME/cleanconfig/shared/sway/rules"
+
+### Idk, shrugs...
+include /etc/sway/config.d/*
+
+### Autostart
+include "$HOME/cleanconfig/shared/sway/autostart"

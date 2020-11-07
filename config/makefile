@@ -36,14 +36,13 @@ sway:
 	yay -S sway xorg-server-xwayland brightnessctl iio-sensor-proxy swayidle wl-clipboard slurp grim alacritty
 	mkdir -p ~/.config/sway
 	ln -s ~/config/sway/config ~/.config/sway/config
-
-waybar:
+	
 	sudo pacman -S waybar otf-font-awesome pavucontrol brightnessctl
 	mkdir -p ~/.config/waybar
 	ln -s ~/config/theme/waybar.css ~/.config/waybar/style.css
 
 i3:
-	yay -S i3-gaps alacritty xorg-server xorg-server-common xorg-xinit picom-ibhagwan-git brightnessctl polybar otf-font-awesome ttf-font-awesome
+	yay -S i3-gaps alacritty xorg-server xorg-server-common xorg-xinit picom-ibhagwan-git brightnessctl polybar otf-font-awesome ttf-font-awesome scrot
 	mkdir -p ~/.config/i3
 	ln -s ~/config/i3/config.out ~/.config/i3/config
 

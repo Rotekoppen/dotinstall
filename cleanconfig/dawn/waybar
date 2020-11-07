@@ -1,0 +1,142 @@
+[{
+  "height": 30,
+  "output": "eDP-1",
+  "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+  "modules-right": ["disk", "disk#win", "disk#syn", "network", "temperature", "cpu", "memory", "battery", "clock"],
+
+  "clock": {
+    "interval": 1,
+    "format": "{:%H:%M:%S}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "battery": {
+    "states": {
+      "good": 80,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "disk": {
+    "format": "/: {percentage_free}%",
+    "path": "/"
+  },
+  "disk#win": {
+    "format": "W: {percentage_free}%",
+    "path": "/windows"
+  },
+  "disk#syn": {
+    "format": "S: {percentage_free}%",
+    "path": "/synced"
+  },
+  "memory": {
+    "interval": 10,
+    "format": "{}% ",
+    "max-length": 10
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "{}% ",
+    "max-length": 10
+  },
+  "temperature": {
+    "critical-threshold": 60,
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": ["", "", ""]
+  },
+  "network": {
+    "format-wifi": "{ipaddr} ({signalStrength}%) ",
+    "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {essid}/{cidr}"
+  }
+}, {
+  "height": 30,
+  "output": "eDP-1",
+  "position":"bottom",
+  "modules-left": ["mpd"],
+  "modules-right": ["idle_inhibitor", "backlight", "pulseaudio", "tray"],
+  "pulseaudio": {
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": ["", ""],
+    "on-scroll-up": "brightnessctl s 1%+",
+    "on-scroll-down": "brightnessctl s 1%-"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "mpd": {
+    "port": 16850,
+    "max-length":60,
+    "format": "{stateIcon} {consumeIcon} {randomIcon} {repeatIcon} {singleIcon} ({elapsedTime:%M:%S}/{totalTime:%M:%S})  {title} - {artist}",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon} Stopped ",
+    "unknown-tag": "N/A",
+    "interval": 1,
+    "consume-icons": {
+      "on": " "
+    },
+
+    "random-icons": {
+      "on": " "
+    },
+
+    "repeat-icons": {
+      "on": " "
+    },
+
+    "single-icons": {
+      "on": "1 "
+    },
+
+    "state-icons": {
+      "playing": "",
+      "paused": ""
+    },
+
+    "on-scroll-up": "mpc volume -p 16850 +3",
+    "on-scroll-down": "mpc volume -p 16850 -3",
+    "tooltip-format": "MPD (connected)\n{artist}\n{album}\n{title}",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  }
+}, {
+  "height": 60,
+  "output": "!eDP-1",
+  "position":"bottom",
+  "modules-left": ["sway/workspaces#dp"],
+  "modules-right": ["clock#dp"],
+
+  "clock#dp": {
+    "interval": 1,
+    "format": "{:%A %d. %B %T}"
+  }
+}]

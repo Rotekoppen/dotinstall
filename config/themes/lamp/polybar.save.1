@@ -17,9 +17,8 @@ yel = #f1fa8c
 
 [base]
 height = 96
-border-left-size = 30
-border-right-size = 30
-radius = 16.0
+border-left-size = 60
+border-right-size = 60
 
 background = ${color.bg}
 foreground =${color.fg}
@@ -30,21 +29,23 @@ font-2 = "Font Awesome 5 Brands,Font Awesome 5 Brands Regular:  style=Regular:  
 
 [bar/1]
 inherit = base
-border-bottom-size  = 30
+border-bottom-size  = 60
 bottom = true
 
 modules-left = corona
-modules-right = filesystem ram cpu temp backlight battery date
+modules-right = filesystem ram cpu temp backlight pulseaudio battery date
 module-margin = 4
 
 [bar/2]
 inherit = base
-border-top-size = 30
+border-top-size = 60
 
 modules-left = i3 title
 modules-right = mpdnp mpd
 module-margin = 2
 
+tray-position = right
+tray-maxsize = 64
 [module/title]
 type = internal/xwindow
 
@@ -73,7 +74,7 @@ type = internal/mpd
 host = 127.0.0.1
 port = 16850
 interval = 3
-format-online = <label-song>
+format-online = <label-song>q
 
 [module/ram]
 type = internal/memory

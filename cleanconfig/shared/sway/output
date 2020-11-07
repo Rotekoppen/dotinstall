@@ -1,0 +1,4 @@
+output * background ~/background fill
+output eDP-1 pos 0,0    scale 2
+output  DP-2 pos 1920,0 scale 1
+output  DP-1 pos 1920,0 scale 1

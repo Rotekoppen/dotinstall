@@ -1,0 +1,43 @@
+{
+  "width": 60,
+  "output": "eDP-1",
+  "position": "left",
+  "modules-center": ["custom/touch#kill", "custom/touch#rofi", "custom/touch#keyboard", "custom/touch#1", "custom/touch#2", "custom/touch#3", "custom/touch#4", "custom/touch#5", "custom/touch#6"],
+
+  "custom/touch#kill": {
+    "format": "",
+    "on-click": "swaymsg kill"
+  },
+  "custom/touch#rofi": {
+    "format": "",
+    "on-click": "sh ~/cleanconfig/current/rofi.sh"
+  },
+  "custom/touch#keyboard": {
+    "format": "",
+    "on-click": "bash ~/cleanconfig/shared/scripts/togglesqueekboard.sh"
+  },
+  "custom/touch#1": {
+    "format": "1",
+    "on-click": "swaymsg workspace 1"
+  },
+  "custom/touch#2": {
+    "format": "2",
+    "on-click": "swaymsg workspace 2"
+  },
+  "custom/touch#3": {
+    "format": "3",
+    "on-click": "swaymsg workspace 3"
+  },
+  "custom/touch#4": {
+    "format": "4",
+    "on-click": "swaymsg workspace 4"
+  },
+  "custom/touch#5": {
+    "format": "5",
+    "on-click": "swaymsg workspace 5"
+  },
+  "custom/touch#6": {
+    "format": "6",
+    "on-click": "swaymsg workspace 6"
+  }
+}

@@ -1,0 +1,8 @@
+assign [app_id="^thunderbird$"] 9
+
+for_window [app_id="retroarch"] fullscreen enable
+for_window [app_id="pavucontrol"] floating enable
+
+for_window [title="Firefox - Sharing Indicator"] floating enable
+for_window [title="Picture-in-Picture"] floating enable
+for_window [title="Extension: (Tree Style Tab) - Close tabs? - Mozilla Firefox"] floating enable

@@ -1,12 +1,12 @@
 # CTRL = Copy
 # ALT = Freeselect
-# MOD = Locked to windows
+# SHIFT = Locked to windows
 
-bindsym --release Print exec sh ~/config/scripts/sway/screenshot.sh
-bindsym --release Print+Control exec sh ~/config/scripts/sway/screenshot-copy.sh
+bindsym Print exec sh ~/config/scripts/screenshot.sh fullscreen save
+bindsym Print+Control exec sh ~/config/scripts/screenshot.sh fullscreen copy
 
-bindsym --release Print+Alt exec sh ~/config/scripts/sway/screenshot-area.sh
-bindsym --release Print+Control+Alt exec sh ~/config/scripts/sway/screenshot-area-copy.sh
+bindsym Print+Mod1 exec sh ~/config/scripts/screenshot.sh area save
+bindsym Print+Control+Mod1 exec sh ~/config/scripts/screenshot.sh area copy
 
-bindsym --release Print+$mod exec sh ~/config/scripts/sway/screenshot-window.sh
-bindsym --release Print+Control+$mod exec sh ~/config/scripts/sway/screenshot-window-copy.sh
+bindsym Print+Mod4 exec sh ~/config/scripts/screenshot.sh window save
+bindsym Print+Control+Mod4 exec sh ~/config/scripts/screenshot.sh window copy

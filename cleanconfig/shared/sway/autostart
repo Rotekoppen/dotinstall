@@ -1,0 +1,10 @@
+### "Tabletmode" or "Quality of life apps"
+exec "monitor-sensor | bash ~/cleanconfig/shared/scripts/autorotate.sh"
+exec squeekboard
+
+### Music player
+exec mpd
+exec mpd_discord_richpresence -h=localhost -p=16850 --fork --use-multiple-apps
+
+### Fixes
+exec sh ~/cleanconfig/shared/scripts/fix-audio.sh

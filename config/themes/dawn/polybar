@@ -34,7 +34,7 @@ border-bottom-size  = 30
 bottom = true
 
 modules-left = corona
-modules-right = filesystem ram cpu temp backlight pulseaudio battery date
+modules-right = filesystem ram cpu temp backlight battery date
 module-margin = 4
 
 [bar/2]

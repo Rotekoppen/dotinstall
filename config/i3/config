@@ -19,4 +19,6 @@ exec feh --bg-fill ~/background
 exec mpd
 
 # Fix audio issues, problably want to delete this ;)
-exec amixer -D hw:0 sset Master unmute && amixer -D hw:0 sset Master playback 100%
+exec amixer -D hw:0 sset Master unmute 
+
+# && amixer -D hw:0 sset Master playback 100%

@@ -1,1 +1,1 @@
-fortune | cowsay
+#fortune | cowsay
